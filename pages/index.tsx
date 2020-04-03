@@ -2,6 +2,7 @@ import {Component} from 'react'
 import Explode from '../components/explode'
 import Spinner from '../components/spinner'
 import Cursor from '../components/cursor'
+import Contact from '../components/contact'
 
 interface State {
   theposition:number,
@@ -60,6 +61,7 @@ class Home extends Component<{},State> {
 
   return(
   <div className="app--container" onMouseMove={(e) => this.setMousePosition(e)}>
+    <Contact />
     <Explode name={name} theposition={this.state.theposition} />
     <Spinner name={name} theposition={this.state.theposition} />
 
