@@ -10,20 +10,23 @@ export default () => {
   const [inputs, setInputs] = useState({
     email: '',
     name: '',
-    message: ''
+    message: '',
+    sent: null
   })
 
+  const styles = {
+    red:"#E80031",
+    yellow:"#F6C200",
+    green:"#02976A",
+    blue:"#0061F6",
+    pink:"#F78CA0"
+  }
   const handleResponse = (status, msg) => {
     if (status === 200) {
       setStatus({
         submitted: true,
         submitting: false,
         info: { error: false, msg: msg }
-      })
-      setInputs({
-        email: '',
-        name: '',
-        message: ''
       })
     } else {
       setStatus({
@@ -58,7 +61,6 @@ export default () => {
     const text = await res.text()
     handleResponse(res.status, text)
   }
-
   return (
     <div className="container">
       <form onSubmit={handleOnSubmit}>
@@ -89,20 +91,16 @@ export default () => {
           required
           value={inputs.message}
         />
-        <button type="submit" disabled={status.submitting}>
+        <button type="submit" disabled={status.submitting} 
+          style={status.submitted ? {background:styles.green}:{background:"white"}}
+        >
           {!status.submitting
             ? !status.submitted
-              ? 'Submit'
-              : 'Submitted'
-            : 'Submitting...'}
+              ? 'Send'
+              : 'Sent 🎉'
+            : 'Sendeding...'}
         </button>
       </form>
-      {status.info.error && (
-        <div className="error">Error: {status.info.msg}</div>
-      )}
-      {!status.info.error && status.info.msg && (
-        <div className="success">{status.info.msg}</div>
-      )}
       <style jsx>{`
         .container{
           height: 80vh;
@@ -145,17 +143,19 @@ export default () => {
           height:50px;
           width:245px;
         }
-        .inputs__name--name:hover, inputs__name--name:active{
-          background:salmon;
+        
+        .inputs__name--name:focus, .inputs__name--name:valid{
+          background:${styles.pink};
         }
-        .inputs__name--email:hover{
-          background:blue;
+
+        .inputs__name--email:focus, .inputs__name--email:valid{
+          background:${styles.blue};
         }
-        textarea:hover{
-          background:yellow;
+        textarea:focus, textarea:valid{
+          background:${styles.yellow};
         }
-        button:hover{
-          background:green;
+        button:focus{
+          background:${styles.green};
         }
         textarea {
           width: 500px;

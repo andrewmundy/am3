@@ -3,6 +3,9 @@ import Explode from '../components/explode'
 import Spinner from '../components/spinner'
 import Cursor from '../components/cursor'
 import Contact from '../components/contact'
+import MyApp from './_app'
+
+
 
 interface State {
   theposition:number,
