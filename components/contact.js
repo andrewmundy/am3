@@ -9,6 +9,7 @@ export default () => {
 
   const [inputs, setInputs] = useState({
     email: '',
+    name: '',
     message: ''
   })
 
@@ -21,6 +22,7 @@ export default () => {
       })
       setInputs({
         email: '',
+        name: '',
         message: ''
       })
     } else {
@@ -58,18 +60,30 @@ export default () => {
   }
 
   return (
-    <main>
+    <div className="container">
       <form onSubmit={handleOnSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          onChange={handleOnChange}
-          required
-          value={inputs.email}
-        />
-        <label htmlFor="message">Message</label>
+        <div className="inputs__name">
+          <input
+            id="name"
+            type="name"
+            onChange={handleOnChange}
+            required
+            placeholder="name"
+            value={inputs.name}
+            className="inputs__name--name"
+          />
+          <input
+            id="email"
+            type="email"
+            onChange={handleOnChange}
+            required
+            placeholder="email"
+            value={inputs.email}
+            className="inputs__name--email"
+            />
+        </div>
         <textarea
+          placeholder="message"
           id="message"
           onChange={handleOnChange}
           required
@@ -89,6 +103,72 @@ export default () => {
       {!status.info.error && status.info.msg && (
         <div className="success">{status.info.msg}</div>
       )}
-    </main>
+      <style jsx>{`
+        .container{
+          height: 80vh;
+          padding: 5rem; 
+          background:black;
+        }
+        .container form{
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction:column;
+        }
+        .container form * {
+          border:none;
+        }
+        input, textarea, button{
+          font-size:20px;
+          color:black;
+          font-family: "MintGrotesk-Medium";
+          box-sizing:border-box;
+          padding:10px;
+          background:white;
+        }
+        input, textarea, button{
+          color:black;
+        }
+        input::placeholder, textarea::placeholder{
+          color:black;
+          font-family: "MintGrotesk-Medium";
+          opacity:1;
+        }
+        .inputs__name {
+          display:flex;
+          justify-content:space-between;
+          margin-bottom:10px;
+          width:500px;
+        }
+        .inputs__name input {
+          height:50px;
+          width:245px;
+        }
+        .inputs__name--name:hover, inputs__name--name:active{
+          background:salmon;
+        }
+        .inputs__name--email:hover{
+          background:blue;
+        }
+        textarea:hover{
+          background:yellow;
+        }
+        button:hover{
+          background:green;
+        }
+        textarea {
+          width: 500px;
+          height: 100px;
+          margin-bottom:10px
+        }
+        button {
+          border:none;
+          height: 50px;
+          width: 500px;
+          cursor:pointer;
+        }
+      `}</style>
+    </div>
   )
 }

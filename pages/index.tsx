@@ -61,16 +61,16 @@ class Home extends Component<{},State> {
 
   return(
   <div className="app--container" onMouseMove={(e) => this.setMousePosition(e)}>
-    <Contact />
     <Explode name={name} theposition={this.state.theposition} />
     <Spinner name={name} theposition={this.state.theposition} />
-
+    <Contact />
     <style jsx global>{`
       html,
       body {
         padding: 0;
         margin: 0;
         overflow-x:hidden;
+        font-family: "MintGrotesk-Bold";
       }
       .mint {
         font-family: "MintGrotesk-Bold";
