@@ -4,16 +4,14 @@ import Spinner from '../components/spinner'
 import Cursor from '../components/cursor'
 import Contact from '../components/contact'
 import MyApp from './_app'
+import { MouseCoordinates } from '../components/helpers'
+import Jubalee from '../components/jubalee'
 
 
 
 interface State {
   theposition:number,
   client:MouseCoordinates
-}
-interface MouseCoordinates {
-  x:number,
-  y:number
 }
 class Home extends Component<{},State> {
   constructor(props){
@@ -64,9 +62,11 @@ class Home extends Component<{},State> {
 
   return(
   <div className="app--container" onMouseMove={(e) => this.setMousePosition(e)}>
-    <Explode name={name} theposition={this.state.theposition} />
-    <Spinner name={name} theposition={this.state.theposition} />
-    <Contact />
+    <Jubalee name={name} theposition={this.state.theposition}/>
+    {/* <Spinner name={name} theposition={this.state.theposition} /> */}
+    <Explode name={"Front-end Developer & Designer"} theposition={this.state.theposition} />
+    <Contact client={this.state.client} />
+
     <style jsx global>{`
       html,
       body {
@@ -74,6 +74,7 @@ class Home extends Component<{},State> {
         margin: 0;
         overflow-x:hidden;
         font-family: "MintGrotesk-Bold";
+        overflow-x:hidden;
       }
       .mint {
         font-family: "MintGrotesk-Bold";

@@ -1,26 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { styles } from './helpers'
 
-export default () => {
+const Contact = props => {
+  useEffect(() => {
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    setSize({
+      width: vw, 
+      height: window.screen.height
+    })
+  }, [])
+
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
     info: { error: false, msg: null }
   })
 
+  const [size, setSize] = useState({
+    height:0,
+    width:0
+  })
+
   const [inputs, setInputs] = useState({
     email: '',
     name: '',
     message: '',
-    sent: null
+    sent: null,
   })
 
-  const styles = {
-    red:"#E80031",
-    yellow:"#F6C200",
-    green:"#02976A",
-    blue:"#0061F6",
-    pink:"#F78CA0"
-  }
   const handleResponse = (status, msg) => {
     if (status === 200) {
       setStatus({
@@ -30,6 +37,8 @@ export default () => {
       })
     } else {
       setStatus({
+        submitted:false,
+        submitting:false,
         info: { error: true, msg: msg }
       })
     }
@@ -61,9 +70,22 @@ export default () => {
     const text = await res.text()
     handleResponse(res.status, text)
   }
+  const math = (coord, size) => {
+    const halfWidth = (size/2)
+    
+    const result = coord < halfWidth ? 
+      Math.floor(halfWidth-coord)/80 : 
+      Math.floor(halfWidth-coord)/80 ;
+
+    return result
+  }
+
   return (
     <div className="container">
       <form onSubmit={handleOnSubmit}>
+        <h1 className="contact">
+          Contact
+        </h1>
         <div className="inputs__name">
           <input
             id="name"
@@ -92,7 +114,7 @@ export default () => {
           value={inputs.message}
         />
         <button type="submit" disabled={status.submitting} 
-          style={status.submitted ? {background:styles.green}:{background:"white"}}
+          style={status.submitted ? {background:styles().green, color:"black"}:{background:"white"}}
         >
           {!status.submitting
             ? !status.submitted
@@ -117,6 +139,13 @@ export default () => {
         .container form * {
           border:none;
         }
+        
+        .contact {
+          font-size: 100px;
+          text-shadow: ${math(props.client.x, size.width)}px ${math(props.client.y, size.height)}px 0 white;
+          margin: 0;
+        }
+
         input, textarea, button{
           font-size:20px;
           color:black;
@@ -125,8 +154,14 @@ export default () => {
           padding:10px;
           background:white;
         }
+
+        .inputs__name, textarea, button {
+          width: 500px;
+        }
         input, textarea, button{
+          transition:background 0.05s;
           color:black;
+          
         }
         input::placeholder, textarea::placeholder{
           color:black;
@@ -137,25 +172,28 @@ export default () => {
           display:flex;
           justify-content:space-between;
           margin-bottom:10px;
-          width:500px;
         }
         .inputs__name input {
           height:50px;
           width:245px;
         }
-        
+        input:not(output):-moz-ui-invalid {
+          box-shadow: none;
+        }
+
+      
         .inputs__name--name:focus, .inputs__name--name:valid{
-          background:${styles.pink};
+          background:${styles().blue};
         }
 
         .inputs__name--email:focus, .inputs__name--email:valid{
-          background:${styles.blue};
+          background:${styles().yellow};
         }
         textarea:focus, textarea:valid{
-          background:${styles.yellow};
+          background:${styles().pink};
         }
         button:focus{
-          background:${styles.green};
+          background:${styles().green};
         }
         textarea {
           width: 500px;
@@ -168,7 +206,23 @@ export default () => {
           width: 500px;
           cursor:pointer;
         }
+
+        @media (max-width: 700px) {
+          .inputs__name, textarea, button {
+            width: calc(100vw - 20px);
+            font-size: 16px;
+          }
+          .inputs__name input {
+            width: calc(50% - 5px);
+            font-size: 16px;
+          }
+          .contact {
+            font-size:80px;
+          }
+        }
       `}</style>
     </div>
   )
 }
+
+export default Contact;

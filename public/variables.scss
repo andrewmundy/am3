@@ -1,0 +1,149 @@
+
+$red:#E80031;
+$yellow:#F6C200;
+$green:#02976A;
+$blue:#0061F6;
+$pink:#F78CA0;
+
+// Spacing
+$spacing_jumbo: 150px;
+$spacing_large: 50px;
+$spacing_medium: 30px;
+$spacing_micro: 10px;
+$spacing_nano: 5px;
+$spacing_small: 20px;
+$spacing_xl: 75px;
+$spacing_xxl: 100px;
+$spacing_xxxl: 120px;
+
+// Transition Speeds 
+$transition_speed_fast: 100ms;
+
+// Easing 
+$easing: cubic-bezier(.5,0,0,1);
+
+// Colors (Brand Palette) 
+$color_dbx_blue: #0061ff;
+$color_dbx_blue_dark: #0052d8; 
+$color_dbx_blue_light: #99c0ff; 
+$color_dbx_blue_medium: #3b85ff; 
+$color_panda_black: #000000; 
+$color_panda_gray_dark: #b8b8b8; 
+$color_panda_gray_extra_light: #fafafa; 
+$color_panda_gray_light: #f5f5f5; 
+$color_panda_gray_medium: #e0e0e0; 
+$color_panda_gray_medium_light: #ebebeb; 
+$color_panda_white: #ffffff; 
+
+// Colors (Core Palette) 
+$color_banana: #ffd830; 
+$color_black_cherry: #61082b; 
+$color_candy_apple: #d5001f; 
+$color_canopy: #005744; 
+$color_celadon: #a2d39b; 
+$color_cloud: #b4d0e7; 
+$color_orchid: #ceb4ff; 
+$color_pink_library: #ffafa2; 
+$color_rococo_gold: #ad780d; 
+$color_sand: #d8bea2; 
+$color_sapphire: #0d2f81; 
+$color_stone: #d0d0d3; 
+$color_sunset: #fb570d; 
+$color_ultra_violet: #813bf6; 
+$color_wheat: #ffcb95; 
+
+// Colors (Extended Core Palette) 
+$color_azalea: #d01c90; 
+$color_crimson: #9b0033; 
+$color_french_vanilla: #ffe7aa; 
+$color_grapefruit: #ff708b; 
+$color_ice: #c3f4ff; 
+$color_ink: #0d2481; 
+$color_jade: #00866e; 
+$color_jungle: #127024; 
+$color_periwinkle: #a0b7ff; 
+$color_pollen: #f4b71f; 
+$color_rocket: #ff1c1c; 
+$color_shark: #637381; 
+$color_spearmint: #29bc80; 
+$color_tangerine: #ff8e21; 
+$color_topaz: #0093ce; 
+$color_turquoise: #62d0dd; 
+$color_velociraptor: #783800; 
+// Typography (Title) 
+$font_size_title_1: 71px; 
+$font_size_title_1_5: 50px; 
+$font_size_title_2: 40px; 
+$font_size_title_3: 32px; 
+$font_size_title_4: 25px; 
+$letter_spacing_title: -1px; 
+$line_height_title_1: 79px; 
+$line_height_title_1_5: 60px; 
+$line_height_title_2: 46px; 
+$line_height_title_3: 38px; 
+$line_height_title_4: 32px; 
+
+// Typography (Copy) 
+$font_size_body_micro: 13px; 
+$font_size_body_small: 14px; 
+$font_size_body_standard: 16px; 
+$line_height_body_micro: 20px; 
+$line_height_body_small: 21px; 
+$line_height_body_standard: 26px; 
+
+// Typography (Family) 
+$font_stack_atlas: 'AtlasGrotesk', 'Open Sans', sans-serif; 
+$font_stack_sharp_book: 'SharpGrotesk', 'Open Sans', sans-serif; 
+$font_stack_sharp_condensed: 'SharpGroteskCondensed', 'Open Sans Condensed', 'Open Sans', sans-serif; 
+$font_stack_sharp_super_condensed: 'SharpGroteskSuperCondensed', 'Open Sans Condensed', 'Open Sans', sans-serif; 
+$font_stack_sharp_wide: 'SharpGroteskWide', 'Open Sans', sans-serif; 
+
+// Typography (Weight) 
+$font_weight_book: 400; 
+$font_weight_medium: 500; 
+$font_weight_semibold: 600; 
+
+// Breakpoints 
+$base: 0; 
+$large: 1024; 
+$medium: 800; 
+
+// Column Widths 
+$percentage_11_12: 91.66666666666666%; 
+$percentage_11_24: 45.83333333333333%; 
+$percentage_13_24: 54.166666666666664%; 
+$percentage_17_24: 70.83333333333334%; 
+$percentage_19_24: 79.16666666666666%; 
+$percentage_1_1: 100%; 
+$percentage_1_12: 8.333333333333332%; 
+$percentage_1_2: 50%; 
+$percentage_1_24: 4.166666666666666%; 
+$percentage_1_3: 33.33333333333333%; 
+$percentage_1_4: 25%; 
+$percentage_1_6: 16.666666666666664%; 
+$percentage_1_8: 12.5%; 
+$percentage_23_24: 95.83333333333334%; 
+$percentage_2_3: 66.66666666666666%; 
+$percentage_3_4: 75%; 
+$percentage_3_8: 37.5%; 
+$percentage_5_12: 41.66666666666667%; 
+$percentage_5_24: 20.833333333333336%; 
+$percentage_5_6: 83.33333333333334%; 
+$percentage_5_8: 62.5%; 
+$percentage_7_12: 58.333333333333336%; 
+$percentage_7_24: 29.166666666666668%; 
+$percentage_7_8: 87.5%; 
+
+// Media Queries 
+$max_large: 'max-width: 1024px'; 
+$max_medium: 'max-width: 800px'; 
+$min_large: 'min-width: 1025px'; 
+$min_medium: 'min-width: 801px';
+
+:export{
+    red:#E80031;
+    yellow:#F6C200;
+    green:#02976A;
+    blue:#0061F6;
+    pink:#F78CA0;
+}

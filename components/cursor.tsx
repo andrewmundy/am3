@@ -1,10 +1,8 @@
 import {Component} from 'react'
+import { MouseCoordinates } from './helpers';
 
 interface Props{
-    client:{
-        x:number,
-        y:number
-    }
+    client?: MouseCoordinates;
 }
 
 class Cursor extends Component<Props> {
@@ -23,7 +21,6 @@ class Cursor extends Component<Props> {
         return newNum
     }
     render(){
-        console.log(this.props.client.y)
         return(
             <div 
                 className="cursor" 
