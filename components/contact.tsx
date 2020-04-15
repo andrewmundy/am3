@@ -221,7 +221,7 @@ const Contact = props => {
             font-size: 16px;
           }
           .contact {
-            font-size:80px;
+            font-size: 75px;
           }
         }
       `}</style>

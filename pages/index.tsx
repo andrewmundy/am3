@@ -75,7 +75,7 @@ class Home extends Component<{},State> {
         overflow-x:hidden;
         font-family: "MintGrotesk-Bold";
         overflow-x:hidden;
-        background:linear-gradient(white 50%, black 50%)
+        background:linear-gradient(to bottom, black 50%, white 50%);
       }
       .mint {
         font-family: "MintGrotesk-Bold";
@@ -111,6 +111,10 @@ class Home extends Component<{},State> {
       @font-face {
         font-family: "Rotor-180";
         src: url("/fonts/Rotor/rotor-trial-180.otf");
+      }
+      input, textarea {
+        -webkit-appearance: none;
+        border-radius: 0;
       }
     `}</style>
   </div>
