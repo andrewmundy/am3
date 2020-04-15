@@ -212,8 +212,12 @@ const Contact = props => {
             width: calc(100vw - 20px);
             font-size: 16px;
           }
+          button {
+            height: 40px;
+          }
           .inputs__name input {
             width: calc(50% - 5px);
+            height: 40px;
             font-size: 16px;
           }
           .contact {
