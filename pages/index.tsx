@@ -75,6 +75,7 @@ class Home extends Component<{},State> {
         overflow-x:hidden;
         font-family: "MintGrotesk-Bold";
         overflow-x:hidden;
+        background:linear-gradient(white 50%, black 50%)
       }
       .mint {
         font-family: "MintGrotesk-Bold";

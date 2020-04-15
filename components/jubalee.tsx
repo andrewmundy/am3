@@ -29,8 +29,7 @@ class Jubalee extends Component<Props> {
                                 key={i} 
                                 id="soup__letters" 
                                 style={{
-                                    "rotate": `${whack * 30}0deg`,
-                                    "transform":`translate3d(${whack * 50}px, ${whack * 50}px, ${whack * 50}px)`
+                                    "transform":`translate3d(${whack * 50}px, ${whack * 50}px, ${whack * 50}px) rotate(${whack * 35}0deg) scale(${whack+1/1})`
                                 }}
                             >
                                 {letter}
@@ -43,7 +42,7 @@ class Jubalee extends Component<Props> {
                     .container{
                         overflow: hidden;
                         height: 80vh;
-                        margin: 50px;
+                        background: white;
                     }
                     .break {
                         flex-basis: 100%;
@@ -57,6 +56,7 @@ class Jubalee extends Component<Props> {
                         margin:50px;
                     }
                     #soup__letters{
+                        will-change: transform, rotate;
                         font-size:100px;
                         font-family: "MintGrotesk-Bold";
                     }
