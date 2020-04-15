@@ -41,8 +41,9 @@ class Jubalee extends Component<Props> {
                     {`
                     .container{
                         overflow: hidden;
-                        height: 80vh;
+                        height: 100vh;
                         background: white;
+                        padding-top:100px;
                     }
                     .break {
                         flex-basis: 100%;
@@ -63,7 +64,6 @@ class Jubalee extends Component<Props> {
                     
                     @media (max-width: 700px) {
                         .container {
-                            margin-top: 100px;
                         }
                         .soup {
                             margin: 0;
