@@ -6,6 +6,7 @@ import Contact from '../components/contact'
 import MyApp from './_app'
 import { MouseCoordinates } from '../components/helpers'
 import Jubalee from '../components/jubalee'
+import Animation from '../components/animation'
 
 
 
@@ -64,6 +65,7 @@ class Home extends Component<{},State> {
   <div className="app--container" onMouseMove={(e) => this.setMousePosition(e)}>
     <Jubalee name={name} theposition={this.state.theposition}/>
     {/* <Spinner name={name} theposition={this.state.theposition} /> */}
+    <Animation theposition={this.state.theposition}/>
     <Explode name={"Front-end Developer & Designer"} theposition={this.state.theposition} />
     <Contact client={this.state.client} />
 
@@ -76,7 +78,7 @@ class Home extends Component<{},State> {
         font-family: "MintGrotesk-Bold";
         overflow-x:hidden;
         background: rgb(0,0,0);
-        background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50.1%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(180deg,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 50%,rgb(0, 0, 0) 50.1%,rgb(0, 0, 0) 100%);
       }
       .mint {
         font-family: "MintGrotesk-Bold";
