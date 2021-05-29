@@ -73,6 +73,19 @@ const Contact = (props) => {
 		const text = await res.text();
 		handleResponse(res.status, text);
 	};
+	const handleCopy = () => {
+		let str = document.getElementById("email").innerText;
+		str = "andrewmundy@gmail.com";
+		const el = document.createElement("textarea");
+		el.value = str;
+		el.setAttribute("readonly", "");
+		el.style.position = "absolute";
+		el.style.left = "-9999px";
+		document.body.appendChild(el);
+		el.select();
+		document.execCommand("copy");
+		document.body.removeChild(el);
+	};
 	const math = (coord, size) => {
 		const halfWidth = size / 2;
 
@@ -83,13 +96,13 @@ const Contact = (props) => {
 
 		return result;
 	};
-	// const socials = ["codepen","github","linkedin","behance","twitter"];
 	const socials = {
 		codepen: "https://codepen.io/andrewmundy/",
 		github: "https://github.com/andrewmundy/",
 		linkedin: "https://www.linkedin.com/in/andrew-mundy/",
 		behance: "https://www.behance.net/andrewmundy",
 		twitter: "https://twitter.com/andrewmundy",
+		email: "mailto:%61%6e%64re&#119;%6d&#117;%6edy@%67ma&#105;l.c&#111;m",
 	};
 	return (
 		<div className="container">
@@ -145,8 +158,8 @@ const Contact = (props) => {
 					return (
 						<a
 							style={{ color: color, width: "100px" }}
-							href={url}
 							key={i}
+							href={url}
 						>
 							{Socials(name, color)}
 						</a>
@@ -155,9 +168,9 @@ const Contact = (props) => {
 			</div>
 			<style jsx>{`
 				.container {
-					height: 80vh;
-					padding: 5rem;
+					padding: 0 5rem;
 					background: black;
+					padding-top: 1rem;
 				}
 				.container form {
 					display: flex;
@@ -275,11 +288,14 @@ const Contact = (props) => {
 						font-size: 16px;
 					}
 					.contact {
-						font-size: 75px;
+						font-size: 65px;
+					}
+					.socials {
+						margin-top: 30px;
 					}
 					.socials a {
-						width: 50px;
-						filter: brightness(100) opacity(0.3);
+						width: 30px !important;
+						filter: brightness(100) opacity(0.4) grayscale(1);
 					}
 				}
 			`}</style>
