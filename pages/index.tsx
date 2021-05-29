@@ -71,9 +71,11 @@ class Home extends Component<{}, State> {
 				onMouseMove={(e) => this.setMousePosition(e)}
 			>
 				<Jubalee name={name} theposition={this.state.theposition} />
-				<Work />
-				{/* <Shapes client={this.state.client} theposition={this.state.theposition} /> */}
-				<Contact client={this.state.client} />
+				<div className="content">
+					<Work />
+					{/* <Shapes client={this.state.client} theposition={this.state.theposition} /> */}
+					<Contact client={this.state.client} />
+				</div>
 
 				<style jsx global>{`
 					html,
@@ -91,6 +93,9 @@ class Home extends Component<{}, State> {
 							rgb(0, 0, 0) 50.1%,
 							rgb(0, 0, 0) 100%
 						);
+					}
+					.content {
+						height: 100vh;
 					}
 					.mint {
 						font-family: "MintGrotesk-Bold";
