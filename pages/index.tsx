@@ -94,9 +94,6 @@ class Home extends Component<{}, State> {
 							rgb(0, 0, 0) 100%
 						);
 					}
-					.content {
-						height: 100vh;
-					}
 					.mint {
 						font-family: "MintGrotesk-Bold";
 						font-size: 100px;
