@@ -195,7 +195,7 @@ const Contact = (props) => {
 					align-items: center;
 				}
 				.socials a {
-					filter: brightness(100) opacity(0.1);
+					filter: opacity(0.2);
 				}
 				.socials a:hover {
 					filter: none;
@@ -296,7 +296,7 @@ const Contact = (props) => {
 					}
 					.socials a {
 						width: 30px !important;
-						filter: brightness(100) opacity(0.4) grayscale(1);
+						filter: opacity(0.2);
 					}
 				}
 			`}</style>

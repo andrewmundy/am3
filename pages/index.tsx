@@ -74,7 +74,7 @@ class Home extends Component<{}, State> {
 			>
 				<Jubalee name={name} theposition={this.state.theposition} />
 				<div
-					// style={{ height: height }}
+					// style={{ minHeight: height }}
 					className="content"
 				>
 					<Work />
@@ -100,6 +100,7 @@ class Home extends Component<{}, State> {
 					}
 					.content {
 						padding-top: 3rem;
+						min-height: 100vh;
 					}
 					.mint {
 						font-family: "MintGrotesk-Bold";
@@ -140,6 +141,11 @@ class Home extends Component<{}, State> {
 					textarea {
 						-webkit-appearance: none;
 						border-radius: 0;
+					}
+					@media (max-width: 700px) {
+						.content {
+							min-height: none;
+						}
 					}
 				`}</style>
 			</div>
