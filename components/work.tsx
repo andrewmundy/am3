@@ -29,6 +29,9 @@ class Work extends Component<Props, State> {
 							.container {
 								padding: 1em;
 							}
+							h1 {
+								font-size: 20px;
+							}
 						}
 					`}
 				</style>

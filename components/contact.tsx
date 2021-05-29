@@ -272,6 +272,7 @@ const Contact = (props) => {
 				@media (max-width: 700px) {
 					.container {
 						padding: 0;
+						padding-bottom: 2rem;
 					}
 					.inputs__name,
 					textarea,

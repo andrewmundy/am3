@@ -65,13 +65,18 @@ class Home extends Component<{}, State> {
 
 	render() {
 		const name = "Andrew Mundy";
+
 		return (
 			<div
 				className="app--container"
 				onMouseMove={(e) => this.setMousePosition(e)}
+				id="header"
 			>
 				<Jubalee name={name} theposition={this.state.theposition} />
-				<div className="content">
+				<div
+					// style={{ height: height }}
+					className="content"
+				>
 					<Work />
 					{/* <Shapes client={this.state.client} theposition={this.state.theposition} /> */}
 					<Contact client={this.state.client} />
@@ -84,7 +89,6 @@ class Home extends Component<{}, State> {
 						margin: 0;
 						overflow-x: hidden;
 						font-family: "MintGrotesk-Bold";
-						overflow-x: hidden;
 						background: rgb(0, 0, 0);
 						background: linear-gradient(
 							180deg,
@@ -95,7 +99,6 @@ class Home extends Component<{}, State> {
 						);
 					}
 					.content {
-						height: 100vh;
 						padding-top: 3rem;
 					}
 					.mint {
