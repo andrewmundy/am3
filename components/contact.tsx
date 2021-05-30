@@ -102,7 +102,9 @@ const Contact = (props) => {
 		linkedin: "https://www.linkedin.com/in/andrew-mundy/",
 		behance: "https://www.behance.net/andrewmundy",
 		twitter: "https://twitter.com/andrewmundy",
-		email: "mailto:%61%6e%64re&#119;%6d&#117;%6edy@%67ma&#105;l.c&#111;m",
+		email: props.isMobile
+			? "mailto:andrewmundy@gmail.com"
+			: "mailto:%61%6e%64re&#119;%6d&#117;%6edy@%67ma&#105;l.c&#111;m",
 	};
 	return (
 		<div className="container">

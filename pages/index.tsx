@@ -13,12 +13,14 @@ import Shapes from "../components/shapes";
 interface State {
 	theposition: number;
 	client: MouseCoordinates;
+	isMobile: Boolean;
 }
 class Home extends Component<{}, State> {
 	constructor(props) {
 		super(props);
 		this.state = {
 			theposition: 0,
+			isMobile: false,
 			client: {
 				x: 0,
 				y: 0,
@@ -27,6 +29,9 @@ class Home extends Component<{}, State> {
 	}
 	componentDidMount() {
 		window.addEventListener("scroll", this.listenToScroll);
+		this.setState({
+			isMobile: window.innerWidth < 700,
+		});
 	}
 
 	componentWillUnmount() {
@@ -65,7 +70,6 @@ class Home extends Component<{}, State> {
 
 	render() {
 		const name = "Andrew Mundy";
-
 		return (
 			<div
 				className="app--container"
@@ -79,7 +83,10 @@ class Home extends Component<{}, State> {
 				>
 					<Work />
 					{/* <Shapes client={this.state.client} theposition={this.state.theposition} /> */}
-					<Contact client={this.state.client} />
+					<Contact
+						client={this.state.client}
+						isMobile={this.state.isMobile}
+					/>
 				</div>
 
 				<style jsx global>{`
