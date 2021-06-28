@@ -96,14 +96,7 @@ class Home extends Component<{}, State> {
 						margin: 0;
 						overflow-x: hidden;
 						font-family: "MintGrotesk-Bold";
-						background: rgb(0, 0, 0);
-						background: linear-gradient(
-							180deg,
-							rgb(255, 255, 255) 0%,
-							rgb(255, 255, 255) 50%,
-							rgb(0, 0, 0) 50.1%,
-							rgb(0, 0, 0) 100%
-						);
+						background: black;
 					}
 					.content {
 						padding-top: 3rem;
