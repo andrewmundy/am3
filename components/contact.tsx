@@ -102,12 +102,13 @@ const Contact = (props) => {
 		linkedin: "https://www.linkedin.com/in/andrew-mundy/",
 		behance: "https://www.behance.net/andrewmundy",
 		twitter: "https://twitter.com/andrewmundy",
-		email: props.isMobile
-			? "mailto:andrewmundy@gmail.com"
-			: "mailto:%61%6e%64re&#119;%6d&#117;%6edy@%67ma&#105;l.c&#111;m",
+		// email: props.isMobile
+		// 	? "mailto:andrewmundy@gmail.com"
+		// 	: "mailto:%61%6e%64re&#119;%6d&#117;%6edy@%67ma&#105;l.c&#111;m",
 	};
 	return (
 		<div className="container">
+			{console.log(props.isMobile)}
 			<form onSubmit={handleOnSubmit}>
 				<h1 className="contact">Contact</h1>
 				<div className="inputs__name">
@@ -120,7 +121,7 @@ const Contact = (props) => {
 						value={inputs.name}
 						className="inputs__name--name"
 					/>
-					<input
+					{/* <input
 						id="email"
 						type="email"
 						onChange={handleOnChange}
@@ -128,7 +129,7 @@ const Contact = (props) => {
 						placeholder="email"
 						value={inputs.email}
 						className="inputs__name--email"
-					/>
+					/> */}
 				</div>
 				<textarea
 					placeholder="message"
