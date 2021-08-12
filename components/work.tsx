@@ -14,7 +14,6 @@ class Work extends Component<Props, State> {
 		return (
 			<div className="container">
 				<h1>Hi 👋</h1>
-				<h1>I'm currently an engineer at Dropbox</h1>
 				<h1>Feel free to reach out with anything</h1>
 				<style jsx>
 					{`

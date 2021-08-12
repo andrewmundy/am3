@@ -108,7 +108,6 @@ const Contact = (props) => {
 	};
 	return (
 		<div className="container">
-			{console.log(props.isMobile)}
 			<form onSubmit={handleOnSubmit}>
 				<h1 className="contact">Contact</h1>
 				<div className="inputs__name">
@@ -121,7 +120,7 @@ const Contact = (props) => {
 						value={inputs.name}
 						className="inputs__name--name"
 					/>
-					{/* <input
+					<input
 						id="email"
 						type="email"
 						onChange={handleOnChange}
@@ -129,7 +128,7 @@ const Contact = (props) => {
 						placeholder="email"
 						value={inputs.email}
 						className="inputs__name--email"
-					/> */}
+					/>
 				</div>
 				<textarea
 					placeholder="message"
@@ -184,7 +183,6 @@ const Contact = (props) => {
 				.container form * {
 					border: none;
 				}
-
 				.contact {
 					font-size: 100px;
 					text-shadow: ${math(props.client.x, size.width)}px
