@@ -42,7 +42,7 @@ class Jubalee extends Component<Props> {
 						);
 					})}
 				</div>
-				<h1>Designer and developer</h1>
+				<h1>Currently software engineering @ Coinbase</h1>
 				<style jsx>
 					{`
 						.container {
