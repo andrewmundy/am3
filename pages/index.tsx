@@ -9,6 +9,8 @@ import Jubalee from "../components/jubalee";
 import Work from "../components/work";
 import Animation from "../components/animation";
 import Shapes from "../components/shapes";
+import Head from "next/head";
+
 
 interface State {
 	theposition: number;
@@ -76,6 +78,16 @@ class Home extends Component<{}, State> {
 				onMouseMove={(e) => this.setMousePosition(e)}
 				id="header"
 			>
+				<Head>
+					<script async src="https://www.googletagmanager.com/gtag/js?id=G-EFYG492WTR"></script>
+					<script>
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments)}
+						gtag('js', new Date());
+
+						gtag('config', 'G-EFYG492WTR');
+					</script>
+				</Head>
 				<Jubalee name={name} theposition={this.state.theposition} />
 				<div
 					// style={{ minHeight: height }}
