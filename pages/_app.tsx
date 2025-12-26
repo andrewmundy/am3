@@ -1,6 +1,12 @@
-import type { AppProps } from 'next/app';
-import '../public/variables.scss';
+import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/next";
+import "../public/variables.scss";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
 }
