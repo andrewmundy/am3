@@ -23,6 +23,10 @@ class Jubalee extends Component<Props> {
 						const everyOther = i % 2 != 0 ? -i : i;
 						const whack = everyOther * direction * theposition;
 
+						const baseSize = 100;
+						const scaleFactor = Math.max(0.1, whack + 1);
+						const fontSize = baseSize * scaleFactor;
+
 						return letter === " " ? (
 							<div key={i} className="break" />
 						) : (
@@ -34,7 +38,8 @@ class Jubalee extends Component<Props> {
 										whack * 50
 									}px, ${whack * 50}px) rotate(${
 										whack * 35
-									}0deg) scale(${whack + 1 / 1})`,
+									}0deg)`,
+									fontSize: `${fontSize}px`,
 								}}
 							>
 								{letter}
@@ -66,9 +71,9 @@ class Jubalee extends Component<Props> {
 							margin: 50px;
 						}
 						#soup__letters {
-							will-change: transform, rotate;
-							font-size: 100px;
+							will-change: transform, font-size;
 							font-family: "MintGrotesk-Bold";
+							line-height: 0.9;
 						}
 
 						@media (max-width: 700px) {
@@ -78,9 +83,6 @@ class Jubalee extends Component<Props> {
 							.soup {
 								margin: 0;
 								padding: 10px;
-							}
-							#soup__letters {
-								font-size: 70px;
 							}
 						}
 					`}
