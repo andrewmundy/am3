@@ -71,7 +71,8 @@ class Jubalee extends Component<Props> {
 						}
 						.soup__letters {
 							will-change: transform, font-size;
-							font-family: "MintGrotesk-Bold";
+							font-family: "Overused Grotesk", sans-serif;
+							font-weight: 700;
 							line-height: 0.9;
 						}
 

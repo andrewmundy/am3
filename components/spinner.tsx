@@ -53,7 +53,8 @@ class Spinner extends Component<Props> {
                   }
                   #spin__letters {
                     font-size: 150px;
-                    font-family: "MintGrotesk-Bold";
+                    font-family: "Overused Grotesk", sans-serif;
+                    font-weight: 700;
                     animation-name: spin, depth;
                     animation-timing-function: linear;
                     animation-iteration-count: infinite;

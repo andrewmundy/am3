@@ -61,7 +61,8 @@ class Explode extends Component<Props> {
             #explode__letters {
               will-change: transform, text-shadow, rotate;
               font-size: ${this.props.name.length * 3}px;
-              font-family: "MintGrotesk-Bold";
+              font-family: "Overused Grotesk", sans-serif;
+              font-weight: 700;
               animation-name: spin, depth;
               animation-timing-function: linear;
               animation-iteration-count: infinite;
