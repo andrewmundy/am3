@@ -25,21 +25,20 @@ class Jubalee extends Component<Props> {
 
 						const baseSize = 100;
 						const scaleFactor = Math.max(0.1, whack + 1);
-						const fontSize = baseSize * scaleFactor;
 
 						return letter === " " ? (
 							<div key={i} className="break" />
 						) : (
 							<div
 								key={i}
-								id="soup__letters"
+								className="soup__letters"
 								style={{
 									transform: `translate3d(${whack * 50}px, ${
 										whack * 50
 									}px, ${whack * 50}px) rotate(${
 										whack * 35
 									}0deg)`,
-									fontSize: `${fontSize}px`,
+									fontSize: `calc(min(${baseSize}px, 22vw) * ${scaleFactor})`,
 								}}
 							>
 								{letter}
@@ -70,7 +69,7 @@ class Jubalee extends Component<Props> {
 							flex-wrap: wrap;
 							margin: 50px;
 						}
-						#soup__letters {
+						.soup__letters {
 							will-change: transform, font-size;
 							font-family: "MintGrotesk-Bold";
 							line-height: 0.9;

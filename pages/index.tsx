@@ -55,7 +55,7 @@ class Home extends Component<{}, State> {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
 
-    const scrolled = winScroll / height;
+    const scrolled = height > 0 ? winScroll / height : 0;
 
     this.setState({
       theposition: scrolled,
