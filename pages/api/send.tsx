@@ -32,9 +32,7 @@ export default async function handler(
   try {
     ({ error } = await resend.emails.send({
       to: 'andrewmundy@gmail.com',
-      // Resend's shared onboarding@resend.dev sender works until the
-      // andrewmundy.net domain is verified; then set RESEND_FROM.
-      from: process.env.RESEND_FROM || 'Contact form <onboarding@resend.dev>',
+      from: 'Andrew Mundy <contact@mail.andrewmundy.net>',
       replyTo: email,
       subject: `New Message From - ${name}`,
       text: `${message}\n\nFrom: ${name} <${email}>`,
