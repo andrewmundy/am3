@@ -63,15 +63,19 @@ const Contact = (props) => {
 	const handleOnSubmit = async (e) => {
 		e.preventDefault();
 		setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-		const res = await fetch("/api/send", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(inputs),
-		});
-		const text = await res.text();
-		handleResponse(res.status, text);
+		try {
+			const res = await fetch("/api/send", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(inputs),
+			});
+			const text = await res.text();
+			handleResponse(res.status, text);
+		} catch (error) {
+			handleResponse(0, "Message not sent.");
+		}
 	};
 	const handleCopy = () => {
 		let str = document.getElementById("email").innerText;
@@ -113,7 +117,9 @@ const Contact = (props) => {
 				<div className="inputs__name">
 					<input
 						id="name"
-						type="name"
+						type="text"
+						aria-label="Name"
+						autoComplete="name"
 						onChange={handleOnChange}
 						required
 						placeholder="name"
@@ -123,6 +129,8 @@ const Contact = (props) => {
 					<input
 						id="email"
 						type="email"
+						aria-label="Email"
+						autoComplete="email"
 						onChange={handleOnChange}
 						required
 						placeholder="email"
@@ -133,6 +141,7 @@ const Contact = (props) => {
 				<textarea
 					placeholder="message"
 					id="message"
+					aria-label="Message"
 					onChange={handleOnChange}
 					required
 					value={inputs.message}
@@ -152,6 +161,12 @@ const Contact = (props) => {
 							: "Sent 🎉"
 						: "Sending..."}
 				</button>
+				{status.info.error && (
+					<p className="error" role="alert">
+						{status.info.msg || "Message not sent."} Please try again, or
+						find me on one of the links below.
+					</p>
+				)}
 			</form>
 			<div className="socials">
 				{Object.entries(socials).map((social, i) => {
@@ -162,6 +177,7 @@ const Contact = (props) => {
 							style={{ color: color, width: "100px" }}
 							key={i}
 							href={url}
+							aria-label={name}
 						>
 							{Socials(name, color)}
 						</a>
@@ -188,6 +204,11 @@ const Contact = (props) => {
 					text-shadow: ${math(props.client.x, size.width)}px
 						${math(props.client.y, size.height)}px 0 white;
 					margin: 0;
+				}
+				.error {
+					color: white;
+					font-family: "MintGrotesk-Medium";
+					margin: 10px 0 0;
 				}
 				.socials {
 					margin-top: 100px;

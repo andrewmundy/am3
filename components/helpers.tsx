@@ -23,7 +23,6 @@ export function Socials(icon, style = "white") {
 			<svg
 				id="behance"
 				width="100%"
-				height="auto"
 				viewBox="0 0 101 100"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +37,6 @@ export function Socials(icon, style = "white") {
 			<svg
 				id="codepen"
 				width="100%"
-				height="auto"
 				viewBox="0 0 101 100"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +51,6 @@ export function Socials(icon, style = "white") {
 			<svg
 				id="github"
 				width="100%"
-				height="auto"
 				viewBox="0 0 101 98"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +65,6 @@ export function Socials(icon, style = "white") {
 			<svg
 				id="linkedin"
 				width="100%"
-				height="auto"
 				viewBox="0 0 101 100"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +79,6 @@ export function Socials(icon, style = "white") {
 			<svg
 				id="twitter"
 				width="100%"
-				height="auto"
 				viewBox="0 0 100 82"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +92,6 @@ export function Socials(icon, style = "white") {
 		email: (
 			<svg
 				width="100%"
-				height="auto"
 				viewBox="0 0 218 216"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
