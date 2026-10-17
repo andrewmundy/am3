@@ -35,9 +35,7 @@ class Jubalee extends Component<Props> {
 								style={{
 									transform: `translate3d(${whack * 50}px, ${
 										whack * 50
-									}px, ${whack * 50}px) rotate(${
-										whack * 35
-									}0deg)`,
+									}px, ${whack * 50}px) rotate(${whack * 35}deg)`,
 									fontSize: `calc(min(${baseSize}px, 22vw) * ${scaleFactor})`,
 								}}
 							>
