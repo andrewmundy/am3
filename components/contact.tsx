@@ -207,7 +207,8 @@ const Contact = (props) => {
 				}
 				.error {
 					color: white;
-					font-family: "MintGrotesk-Medium";
+					font-family: "Overused Grotesk", sans-serif;
+					font-weight: 500;
 					margin: 10px 0 0;
 				}
 				.socials {
@@ -228,7 +229,8 @@ const Contact = (props) => {
 				button {
 					font-size: 20px;
 					color: black;
-					font-family: "MintGrotesk-Medium";
+					font-family: "Overused Grotesk", sans-serif;
+					font-weight: 500;
 					box-sizing: border-box;
 					padding: 10px;
 					background: white;
@@ -248,7 +250,8 @@ const Contact = (props) => {
 				input::placeholder,
 				textarea::placeholder {
 					color: black;
-					font-family: "MintGrotesk-Medium";
+					font-family: "Overused Grotesk", sans-serif;
+					font-weight: 500;
 					opacity: 1;
 				}
 				.inputs__name {

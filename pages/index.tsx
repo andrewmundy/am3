@@ -93,47 +93,30 @@ class Home extends Component<{}, State> {
             padding: 0;
             margin: 0;
             overflow-x: hidden;
-            font-family: "MintGrotesk-Bold";
+            font-family: "Overused Grotesk", sans-serif;
+            font-weight: 700;
             background: black;
           }
           .content {
             padding-top: 3rem;
             min-height: 100vh;
           }
-          .mint {
-            font-family: "MintGrotesk-Bold";
-            font-size: 100px;
-          }
-          .roto {
-            font-family: "Rotor-0";
-            font-size: 100px;
-          }
           * {
             box-sizing: border-box;
           }
           @font-face {
-            font-family: "MintGrotesk-Black";
-            src: url("/fonts/Mint-Grotesk/MintGroteskTrialV0.7-Black.otf");
+            font-family: "Overused Grotesk";
+            src: url("/fonts/Overused-Grotesk/OverusedGrotesk-Medium.woff2")
+              format("woff2");
+            font-weight: 500;
+            font-display: swap;
           }
           @font-face {
-            font-family: "MintGrotesk-Bold";
-            src: url("/fonts/Mint-Grotesk/MintGroteskTrialV0.7-Bold.otf");
-          }
-          @font-face {
-            font-family: "MintGrotesk-Medium";
-            src: url("/fonts/Mint-Grotesk/MintGroteskTrialV0.7-Medium.otf");
-          }
-          @font-face {
-            font-family: "Rotor-0";
-            src: url("/fonts/Rotor/rotor-trial-0.otf");
-          }
-          @font-face {
-            font-family: "Rotor-90";
-            src: url("/fonts/Rotor/rotor-trial-90.otf");
-          }
-          @font-face {
-            font-family: "Rotor-180";
-            src: url("/fonts/Rotor/rotor-trial-180.otf");
+            font-family: "Overused Grotesk";
+            src: url("/fonts/Overused-Grotesk/OverusedGrotesk-Bold.woff2")
+              format("woff2");
+            font-weight: 700;
+            font-display: swap;
           }
           input,
           textarea {
